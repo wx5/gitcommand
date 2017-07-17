@@ -8,3 +8,4 @@
 + [frontend-dev-bookmarks](https://github.com/dypsilon/frontend-dev-bookmarks)
 + [awesome-html5](https://github.com/diegocard/awesome-html5)
 + [Awesome-Laravel-Education](https://github.com/fukuball/Awesome-Laravel-Education)
++ [Awesome-Laravel](https://github.com/chiraggude/awesome-laravel)
