@@ -1,3 +1,7 @@
+# 一份laravel安装日志
+#### 可以看到laravel使用了哪些工具来支撑整个框架
+#### 例如，用于代码质量管控的工具链 phpunit,phpspec,phpqa,phing,phpdocumentor等。 
+
 + Crafting application...
 + Loading composer repositories with package information
 + Installing dependencies (including require-dev) from lock file
@@ -61,7 +65,7 @@
   - Installing phpspec/prophecy (v1.7.0) Loading from cache
   - Installing myclabs/deep-copy (1.6.1) Loading from cache
   - Installing phpunit/phpunit (5.7.21) Loading from cache
-  
+
 	* symfony/var-dumper suggests installing ext-symfony_debug ()
 	* symfony/console suggests installing symfony/filesystem ()
 	* psy/psysh suggests installing ext-pcntl (Enabling the PCNTL extension makes PsySH a lot happier :))
