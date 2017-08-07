@@ -5,8 +5,8 @@
 - `git config --list`
 
 ### 配置用户名和邮箱
-- `git config --global user.name "恭喜你"`
-- `git config --global user.email "phplang@163.com"`
+- `git config --global user.name "恭**"`
+- `git config --global user.email "php****@163.com"`
 
 ### 初始化一个目录为git本地仓库 
 - `git init`
