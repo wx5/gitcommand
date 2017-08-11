@@ -8,6 +8,9 @@
 - `git config --global user.name "恭**"`
 - `git config --global user.email "php****@163.com"`
 
+### 获取远程仓库
+- `git clone git://github.com/gitaccount/gitproject.git`
+
 ### 初始化一个目录为git本地仓库 
 - `git init`
 
