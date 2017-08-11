@@ -1,5 +1,8 @@
 # gitcommand
 
+### GIT官方指南
+[Git官方指南](https://git-scm.com/book/zh/v2)
+
 ### 查看本地环境配置(包括登录用户名和邮箱)
 - `git config -l`
 - `git config --list`
@@ -30,7 +33,10 @@
 - `git commit -m "description such as first commit."`
 
 ### 在远程仓库中创建一个分支(分支名称随便取origin,github,test均可)
-- `git remote add origin git@github.com:gitaccount@gitproject.git`
+- `git remote add origin git@github.com:gitaccount/gitproject.git`
+
+### 删除分支关联
+- `git remote rm origin`
 
 ### 提交本地仓库到远程项目仓库
 - `git push -u origin master`
@@ -38,5 +44,4 @@
 ### 强制提交
 - `git push -f`
 
-### 删除分支关联
-- `git rm origin`
+
