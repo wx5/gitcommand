@@ -43,5 +43,14 @@
 
 ### 强制提交
 - `git push -f`
+---
+### 来不及消化
+此时如果origin的master分支上有一些本地没有的提交,push会失败.
+所以解决的办法是, 首先设定本地master的上游分支:
+    git branch --set-upstream-to=origin/master
+然后pull:
+    git pull --rebase
+最后再push:
+    git push
 
 
