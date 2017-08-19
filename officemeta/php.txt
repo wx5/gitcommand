@@ -1,0 +1,61 @@
+public function _download_xls($html,$file) {
+    header("Content-type:application/vnd.ms-excel");  //设置内容类型
+    header("Content-Disposition:attachment;filename=".$file.".xls");  //文件下载
+    echo $html;
+}
+
+public function _download_doc($html,$file) {
+    header("Content-type:application/vnd.ms-word");  //设置内容类型
+    header("Content-Disposition:attachment;filename=".$file.".doc");  //文件下载
+    echo $html;
+}
+
+protected function _download_pdf($html,$title='中太外贸公司',$subtitle='',$filename='a.qzztcn.com.pdf') {
+    $base_path=str_replace('\\','/',base_path());
+    $pdf_lib_path=$base_path.'/project/Osforge/TCPDF/tcpdf.php';
+    require_once($pdf_lib_path);
+
+    $pdf = new \Tcpdf(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+    // 设置打印模式
+    $pdf->SetCreator(PDF_CREATOR);
+    $pdf->SetAuthor('Nicola Asuni');
+    $pdf->SetTitle($title);
+    $pdf->SetSubject('TCPDF Tutorial');
+    $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
+    // 是否显示页眉
+    $pdf->setPrintHeader(false);
+    // 设置页眉显示的内容
+    // $pdf->SetHeaderData('', 60, $title, $subtitle, array(150,150,150), array(180,180,180));
+    // 设置页眉字体
+    // $pdf->setHeaderFont(Array('SimFang', 'Freeserif', '14'));
+    // 页眉距离顶部的距离
+    $pdf->SetHeaderMargin('0');
+    // 是否显示页脚
+    $pdf->setPrintFooter(false);
+    // 设置页脚显示的内容
+    //$pdf->setFooterData(array(0,64,0), array(0,64,128));
+    // 设置页脚的字体
+    //$pdf->setFooterFont(Array('dejavusans', '', '10'));
+    // 设置页脚距离底部的距离
+    $pdf->SetFooterMargin('10');
+    // 设置默认等宽字体
+    $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+    // 设置行高
+    $pdf->setCellHeightRatio(1);
+    // 设置左、上、右的间距
+    $pdf->SetMargins('5', '10', '10');
+    // 设置是否自动分页  距离底部多少距离时分页
+    $pdf->SetAutoPageBreak(TRUE, '15');
+    // 设置图像比例因子
+    $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+    if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
+        require_once(dirname(__FILE__).'/lang/eng.php');
+        $pdf->setLanguageArray($l);
+    }
+    $pdf->setFontSubsetting(false);
+    $pdf->AddPage();
+    // 设置字体
+    $pdf->SetFont('stsongstdlight', '', 14, '', true);
+    $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
+    $pdf->Output($filename, 'I');
+}
