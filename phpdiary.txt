@@ -1,0 +1,11 @@
+1 认证细节
+2 登录细节
+3 充值提现细节
+4 php载入js文件及动态处理资源文件
+{% include "base_js.html" %}
+{% include "base_validationEngine_js.html" %}
+{% include "base_ajaxform_js.html" %}
+{% include "base_cart_js.html" %}
+{% include "base_testdata_js.html" %}
+{% include "base_debug_js.html" %}
+{% include "base_other_js.html" %}
